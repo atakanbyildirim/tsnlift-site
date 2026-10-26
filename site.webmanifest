@@ -1,0 +1,20 @@
+{
+  "name": "TSN Lift Forklift Servis",
+  "short_name": "TSN Lift",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fcfbf8",
+  "theme_color": "#f4a516",
+  "icons": [
+    {
+      "src": "assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

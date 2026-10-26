@@ -1,0 +1,24 @@
+# Yalnızca klasik (Apache / cPanel) hostingte kullanılır.
+# Netlify, Cloudflare Pages ve GitHub Pages bu dosyayı yok sayar.
+
+# Türkçe karakterler için
+AddDefaultCharset UTF-8
+
+# Özel 404 sayfası
+ErrorDocument 404 /404.html
+
+# HTTP -> HTTPS yönlendirmesi (SSL kurulduktan sonra çalışır)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Görseller ve stil dosyaları için tarayıcı önbelleği
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
